@@ -169,16 +169,3 @@ html {
   background: oklch(0.50 0.12 150 / 0.6);
 }
 
-/* Wavy section divider */
-.wave-divider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-.wave-divider svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: auto;
-}

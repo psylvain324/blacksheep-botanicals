@@ -6,31 +6,32 @@ const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663397693691/hEsC9
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
+      {/* Background Image - 50% larger (zoomed) */}
+      <div className="absolute inset-0 overflow-hidden" style={{ opacity: 0.8 }}>
         <img
           src={HERO_IMG}
           alt="Kava shells and botanicals on wooden bar"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-150 origin-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-earth-brown/70 via-earth-brown/50 to-earth-green-dark/70" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto text-center px-4 pt-20">
+      {/* Content - shifted halfway up toward header */}
+      <div className="relative z-10 container mx-auto text-center px-4 pt-20 -mt-[28vh]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="font-body text-earth-gold-light tracking-[0.3em] uppercase text-sm mb-4">
+          <img
+            src="/Images/BlackSheepLogo_Transparent.png"
+            alt="Black Sheep Botanicals"
+            className="h-36 sm:h-40 md:h-56 lg:h-64 w-auto mx-auto mb-4 drop-shadow-lg"
+          />
+          <p className="font-body text-earth-gold-light tracking-[0.3em] uppercase text-sm mb-6">
             St. Petersburg, Florida
           </p>
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] mb-6">
-            Black Sheep
-            <span className="block text-earth-gold">Botanicals</span>
-          </h1>
-          <p className="font-body text-white/80 text-lg sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="font-body text-white/80 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
             Your neighborhood kava bar — serving traditional kava, kratom teas,
             and botanical drinks in a warm, community-driven space.
           </p>
@@ -44,13 +45,13 @@ export default function Hero() {
         >
           <a
             href="#menu"
-            className="px-8 py-4 bg-earth-terracotta text-white rounded-full font-semibold text-lg hover:bg-earth-terracotta-light transition-all shadow-xl shadow-earth-terracotta/30 hover:shadow-2xl hover:shadow-earth-terracotta/40 hover:-translate-y-0.5"
+            className="px-6 py-3 bg-earth-terracotta text-white rounded-full font-semibold text-base hover:bg-earth-terracotta-light transition-all shadow-xl shadow-earth-terracotta/30 hover:shadow-2xl hover:shadow-earth-terracotta/40 hover:-translate-y-0.5"
           >
             View Our Menu
           </a>
           <a
             href="#about"
-            className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold text-lg hover:bg-white/20 transition-all"
+            className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold text-base hover:bg-white/20 transition-all"
           >
             Learn About Kava
           </a>

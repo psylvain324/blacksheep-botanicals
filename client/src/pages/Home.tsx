@@ -1,10 +1,3 @@
-/*
- * Black Sheep Botanicals - Home Page
- * Design: "Living Earth" — Organic Modernism meets Biophilic Design
- * Colors: Linen base, living greens, terracotta, golden amber, deep brown
- * Typography: Fraunces (display) + Outfit (body)
- */
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WeeklySpecials from "@/components/WeeklySpecials";
@@ -15,7 +8,7 @@ import AboutSection from "@/components/AboutSection";
 import MapSection from "@/components/MapSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import WaveDivider from "@/components/WaveDivider";
+import SectionDivider from "@/components/SectionDivider";
 
 export default function Home() {
   return (
@@ -23,19 +16,19 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <WaveDivider color="earth-cream" flip={false} />
+        <SectionDivider color="earth-cream" />
         <WeeklySpecials />
-        <WaveDivider color="earth-linen" flip={true} />
+        <SectionDivider color="earth-linen" />
         <Events />
-        <WaveDivider color="earth-cream" flip={false} />
+        <SectionDivider color="earth-cream" />
         <Menu />
-        <WaveDivider color="earth-green-dark" flip={true} />
+        <SectionDivider color="earth-green-dark" />
         <Schedule />
-        <WaveDivider color="earth-linen" flip={false} />
+        <SectionDivider color="earth-linen" />
         <AboutSection />
-        <WaveDivider color="earth-cream" flip={true} />
+        <SectionDivider color="earth-cream" />
         <MapSection />
-        <WaveDivider color="earth-brown" flip={false} />
+        <SectionDivider color="earth-brown" />
         <Contact />
       </main>
       <Footer />
