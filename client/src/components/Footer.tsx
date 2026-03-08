@@ -41,9 +41,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-earth-brown text-white">
+
       <div className="container mx-auto py-16">
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Brand */}
+        {/* <div className="grid md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-6 h-6 text-earth-gold" />
@@ -55,7 +55,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-body text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
-              St. Petersburg's neighborhood kava bar. Traditional kava, kratom teas, and botanical drinks served in a warm, community-driven space.
+              St. Petersburg's neighborhood kava bar. Traditional kava, Botanical teas, and botanical drinks served in a warm, community-driven space.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -73,7 +73,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="font-display text-lg font-bold mb-4 text-earth-gold">Quick Links</h4>
             <ul className="space-y-2">
@@ -90,7 +89,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h4 className="font-display text-lg font-bold mb-4 text-earth-gold">Contact</h4>
             <div className="space-y-3 font-body text-sm text-white/50">
@@ -114,7 +112,7 @@ export default function Footer() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">

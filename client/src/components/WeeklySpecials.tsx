@@ -17,7 +17,7 @@ export default function WeeklySpecials() {
             Weekly Specials
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-earth-brown mb-2">
-            Best specials in town
+            Best Specials In Town!
           </h2>
           <p className="font-body text-earth-brown-light text-base max-w-xl mx-auto">
             $5 Double Tea · $15 Half Gallon (Mon/Wed/Fri)
@@ -45,6 +45,22 @@ export default function WeeklySpecials() {
               className="w-full h-48 sm:h-56 object-cover"
             />
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center mt-12 sm:mt-16"
+        >
+          <h3 className="font-display text-2xl sm:text-3xl font-bold text-earth-brown mb-3">
+            Our Awesome Kavatenders
+          </h3>
+          <p className="font-body text-earth-brown-light text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            We have the best team in town — friendly, knowledgeable, and passionate about botanicals. 
+            Enjoy the best-priced, high-quality tea served with a smile.
+          </p>
         </motion.div>
       </div>
     </section>

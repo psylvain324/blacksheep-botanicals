@@ -7,7 +7,6 @@ import Schedule from "@/components/Schedule";
 import AboutSection from "@/components/AboutSection";
 import MapSection from "@/components/MapSection";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
         <SectionDivider color="earth-brown" />
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }

@@ -28,11 +28,11 @@ export default function Hero() {
             alt="Black Sheep Botanicals"
             className="h-36 sm:h-40 md:h-56 lg:h-64 w-auto mx-auto mb-4 drop-shadow-lg"
           />
-          <p className="font-body text-earth-gold-light tracking-[0.3em] uppercase text-sm mb-6">
+          <p className="font-body font-semibold text-earth-gold-light tracking-[0.3em] uppercase text-sm mb-6">
             St. Petersburg, Florida
           </p>
           <p className="font-body text-white/80 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-            Your neighborhood kava bar — serving traditional kava, kratom teas,
+            Your neighborhood kava bar — serving traditional kava, botanical teas,
             and botanical drinks in a warm, community-driven space.
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/70 text-sm"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/70 text-base font-semibold"
         >
           <span className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-earth-gold" />

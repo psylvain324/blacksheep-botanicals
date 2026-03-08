@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { BookOpen, Leaf, Droplets, Heart, Shield, Smile } from "lucide-react";
 
 const KAVA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663397693691/hEsC9x2VFLWg57pnbicY3y/kava-preparation-4SoVCiZXwwzuhQJUbWYAGA.webp";
-const KRATOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663397693691/hEsC9x2VFLWg57pnbicY3y/kratom-leaves-o84xmiMJNpfDykWKpGM4jX.webp";
+const BOTANICAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663397693691/hEsC9x2VFLWg57pnbicY3y/kratom-leaves-o84xmiMJNpfDykWKpGM4jX.webp";
 
 const kavaFacts = [
   { icon: Droplets, title: "What Is It?", text: "Kava (Piper methysticum) is a plant native to the South Pacific islands. The root is ground and strained with water to create a calming, earthy drink that has been used ceremonially for over 3,000 years." },
@@ -10,10 +10,10 @@ const kavaFacts = [
   { icon: Heart, title: "The Culture", text: "In Pacific Island cultures, kava is shared in social gatherings called 'nakamals.' It brings people together. That same spirit of community is what we bring to Black Sheep." },
 ];
 
-const kratomFacts = [
-  { icon: Leaf, title: "What Is It?", text: "Kratom (Mitragyna speciosa) is a tropical tree from Southeast Asia, related to the coffee family. Its leaves have been used traditionally for centuries as a tea for energy and well-being." },
-  { icon: Shield, title: "How It's Used", text: "Kratom is typically brewed as a tea. Different strains and amounts can produce different effects — from a gentle energy boost to a more relaxed, mellow feeling." },
-  { icon: Heart, title: "Our Approach", text: "We serve high-quality kratom teas prepared with care. Our kavatenders can help you find the right option for your needs, whether you're a first-timer or experienced." },
+const botanicalFacts = [
+  { icon: Leaf, title: "What Is It?", text: "Botanical Tea (Mitragyna speciosa) is a tropical tree from Southeast Asia, related to the coffee family. Its leaves have been used traditionally for centuries as a tea for energy and well-being." },
+  { icon: Shield, title: "How It's Used", text: "It is typically brewed as a tea. Different strains and amounts can produce different effects — from a gentle energy boost to a more relaxed, mellow feeling." },
+  { icon: Heart, title: "Our Approach", text: "We serve high-quality botanical teas prepared with care. Our kavatenders can help you find the right option for your needs, whether you're a first-timer or experienced." },
 ];
 
 export default function AboutSection() {
@@ -33,7 +33,7 @@ export default function AboutSection() {
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-earth-brown mb-4">
             What Are
-            <span className="text-earth-green"> Kava & Kratom?</span>
+            <span className="text-earth-green"> Kava & Botanical Teas?</span>
           </h2>
           <p className="font-body text-earth-brown-light text-lg max-w-2xl mx-auto">
             New to the world of botanicals? Here's everything you need to know before your first visit.
@@ -92,7 +92,7 @@ export default function AboutSection() {
           </motion.div>
         </div>
 
-        {/* Kratom Section */}
+        {/* Botanical Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -102,13 +102,13 @@ export default function AboutSection() {
             className="order-2 lg:order-1"
           >
             <h3 className="font-display text-3xl sm:text-4xl font-bold text-earth-brown mb-2">
-              Kratom <span className="text-earth-terracotta">— Nature's Leaf</span>
+              Mitragyna Speciosa <span className="text-earth-terracotta">— Nature's Leaf</span>
             </h3>
             <p className="font-body text-earth-brown-light text-base mb-8 italic">
               A member of the coffee family, used for centuries in Southeast Asian tradition.
             </p>
             <div className="space-y-5">
-              {kratomFacts.map((fact, i) => (
+              {botanicalFacts.map((fact, i) => (
                 <motion.div
                   key={fact.title}
                   initial={{ opacity: 0, y: 10 }}
@@ -138,8 +138,8 @@ export default function AboutSection() {
           >
             <div className="rounded-3xl overflow-hidden shadow-xl shadow-earth-brown/10">
               <img
-                src={KRATOM_IMG}
-                alt="Fresh kratom leaves and powder on wooden surface"
+                src={BOTANICAL_IMG}
+                alt="Fresh botanical tea leaves and powder on wooden surface"
                 className="w-full h-[350px] sm:h-[420px] object-cover"
               />
             </div>
@@ -155,7 +155,7 @@ export default function AboutSection() {
           className="mt-16 p-6 rounded-2xl bg-earth-cream border border-earth-green/10 text-center"
         >
           <p className="font-body text-earth-brown-light text-sm leading-relaxed max-w-2xl mx-auto">
-            <strong className="text-earth-brown">A note on wellness:</strong> Kava and kratom are botanical products, not medications. 
+            <strong className="text-earth-brown">A note on wellness:</strong> Kava and botanical teas are botanical products, not medications. 
             They are not intended to diagnose, treat, cure, or prevent any disease. If you have health concerns or are taking medication, 
             please consult with a healthcare professional. Our kavatenders are happy to answer any questions about our products.
           </p>

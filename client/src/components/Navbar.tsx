@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -12,13 +12,33 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const SCROLL_DOWN_THRESHOLD = 60;
+const SCROLL_UP_THRESHOLD = 20;
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const scrolledRef = useRef(scrolled);
+  scrolledRef.current = scrolled;
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const y = window.scrollY;
+      // Hysteresis: scroll down past 60 to become scrolled, back up past 20 to return to top
+      const next = scrolledRef.current
+        ? y > SCROLL_UP_THRESHOLD
+        : y > SCROLL_DOWN_THRESHOLD;
+      if (next !== scrolledRef.current) {
+        scrolledRef.current = next;
+        setScrolled(next);
+      }
+    };
+    // Sync initial state
+    const initial = window.scrollY > SCROLL_DOWN_THRESHOLD;
+    scrolledRef.current = initial;
+    setScrolled(initial);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -43,35 +63,46 @@ export default function Navbar() {
         {/* Spacer for centering (matches mobile toggle width) */}
         <div className="w-10 lg:invisible" aria-hidden />
 
-        {/* Desktop Nav - centered, larger with font-display */}
-        <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-3">
-          {navLinks.map((link, i) => (
-            <motion.button
-              key={link.href}
-              onClick={() => handleClick(link.href)}
-              initial={{ opacity: 0, y: -12 }}
+        {/* Desktop Nav - re-animates (slide + fade) when snapping to/from top */}
+        <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-3 overflow-visible">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={scrolled ? "scrolled" : "top"}
+              initial={{ opacity: 0, y: -16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.06, ease: "easeOut" }}
-              whileHover={{ scale: 1.04, y: -1 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative px-4 py-2.5 rounded-lg text-sm font-display font-semibold tracking-wide overflow-hidden uppercase whitespace-nowrap"
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="flex items-center gap-3"
             >
-              <span className="relative z-10 text-white/95 group-hover:text-earth-gold transition-colors duration-300">
-                {link.label}
-              </span>
-              <motion.span
-                className="absolute inset-0 rounded-lg border border-transparent group-hover:border-earth-gold/60 bg-transparent group-hover:bg-earth-gold/20"
-                initial={false}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.span
-                className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100"
-                style={{ boxShadow: "0 0 24px rgba(212,168,75,0.25)" }}
-                initial={false}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
-          ))}
+              {navLinks.map((link, i) => (
+                <motion.button
+                  key={link.href}
+                  onClick={() => handleClick(link.href)}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.05 + i * 0.04, ease: "easeOut" }}
+                  whileHover={{ scale: 1.04, y: -1 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative px-4 py-2.5 rounded-lg text-sm font-display font-semibold tracking-wide overflow-hidden uppercase whitespace-nowrap"
+                >
+                  <span className="relative z-10 text-white/95 group-hover:text-earth-gold transition-colors duration-300">
+                    {link.label}
+                  </span>
+                  <motion.span
+                    className="absolute inset-0 rounded-lg border border-transparent group-hover:border-earth-gold/60 bg-transparent group-hover:bg-earth-gold/20"
+                    initial={false}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <motion.span
+                    className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100"
+                    style={{ boxShadow: "0 0 24px rgba(212,168,75,0.25)" }}
+                    initial={false}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Mobile Toggle */}

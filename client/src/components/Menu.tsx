@@ -4,9 +4,8 @@ import { Leaf, Coffee, Droplets, Cookie } from "lucide-react";
 
 const categories = [
   { id: "kava", label: "Kava", icon: Droplets },
-  { id: "kratom", label: "Kratom Teas", icon: Leaf },
+  { id: "botanical", label: "Botanical Teas", icon: Leaf },
   { id: "drinks", label: "Other Drinks", icon: Coffee },
-  { id: "snacks", label: "Snacks & More", icon: Cookie },
 ];
 
 interface MenuItem {
@@ -18,27 +17,21 @@ interface MenuItem {
 
 const menuItems: Record<string, MenuItem[]> = {
   kava: [
-    { name: "Traditional Kava Shell", description: "Classic kava prepared the traditional way — earthy, smooth, and grounding.", price: "$3", tag: "Popular" },
-    { name: "Kava Double Shell", description: "Double the relaxation. Two shells of our fresh-brewed traditional kava.", price: "$5" },
-    { name: "Kava Quad", description: "Four shells for the seasoned kava drinker. Maximum chill.", price: "$10" },
-    { name: "All-You-Can-Drink Kava", description: "Unlimited traditional kava for your entire visit. Best value in town.", price: "$20", tag: "Best Value" },
+    { name: "Traditional Kava Shell", description: "Classic kava prepared the traditional way — earthy, smooth, and grounding.", price: "$4", tag: "Popular" },
+    { name: "Kava Double Shell", description: "Double the relaxation. Two shells of our fresh-brewed traditional kava.", price: "$6" },
+    { name: "Kava Quad", description: "Four shells for the seasoned kava drinker. Maximum chill.", price: "$10", tag: "Best Value"  },
     { name: "Kava by the Gallon", description: "Take the kava home with you. Perfect for sharing or stocking up.", price: "Ask" },
-    { name: "Flavored Kava on Tap", description: "House-made flavored kava from our taps — brewed fresh in-house daily.", price: "$6" },
+    { name: "Flavored Kava", description: "House-made flavored kava from our taps — brewed fresh in-house daily.", price: "$6" },
   ],
-  kratom: [
-    { name: "Kratom Tea (Hot)", description: "Freshly brewed kratom tea served hot. Choose your strain.", price: "$7" },
-    { name: "Kratom Tea (Iced)", description: "Refreshing iced kratom tea — perfect for Florida weather.", price: "$7" },
-    { name: "Kratom Tea (Special Days)", description: "Available Mon, Wed, Fri at the special price. Same great quality.", price: "$5", tag: "M/W/F Special" },
-    { name: "Kratom Shots", description: "Concentrated kratom extract for a quick, convenient boost.", price: "Ask" },
+  botanical: [
+    { name: "Botanical Tea Single", description: "Freshly brewed botanical tea served as 10oz serving. Choose your strain.", price: "$6" },
+    { name: "Botanical Tea Double", description: "Refreshing botanical tea served as 20oz serving. Choose your strain.", price: "$10" },
+    { name: "Botanical Tea Double (Special Days)", description: "Available Mon, Wed, Fri at the special price. Same great quality.", price: "$5", tag: "M/W/F Special" },
+    { name: "Botanical Shots", description: "Concentrated Botanical extract for a quick, convenient boost.", price: "Ask" },
   ],
   drinks: [
-    { name: "Hot Cocoa", description: "Rich, warming hot cocoa — a cozy alternative to kava.", price: "$4" },
-    { name: "Herbal Tea", description: "Selection of herbal teas for a lighter, caffeine-free option.", price: "$4" },
-    { name: "Bottled Drinks", description: "Water, sodas, and other bottled beverages available.", price: "$2+" },
-  ],
-  snacks: [
-    { name: "Chips & Snacks", description: "Assorted chips and packaged snacks to munch on.", price: "$2+" },
-    { name: "Candy & Treats", description: "Sweet treats to complement your kava experience.", price: "$1+" },
+    { name: "White Rabbit Seltzer", description: "Flavors: ", price: "$7" },
+    { name: "Kava Seltzer", description: "Falvors: ", price: "$4" },
   ],
 };
 
@@ -64,7 +57,7 @@ export default function Menu() {
             <span className="text-earth-green"> Care</span>
           </h2>
           <p className="font-body text-earth-brown-light text-lg max-w-xl mx-auto">
-            From traditional kava shells to kratom teas and more — everything is prepared fresh with quality ingredients.
+            From traditional kava shells to botanical teas and more — everything is prepared fresh with quality ingredients.
           </p>
         </motion.div>
 
