@@ -10,6 +10,8 @@ const quickLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const PORTFOLIO_URL = "#"; // Update with your portfolio URL when ready
+
 const socialLinks = [
   {
     label: "Facebook",
@@ -41,9 +43,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-earth-brown text-white">
-
       <div className="container mx-auto py-16">
-        {/* <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-6 h-6 text-earth-gold" />
@@ -55,7 +56,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-body text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
-              St. Petersburg's neighborhood kava bar. Traditional kava, Botanical teas, and botanical drinks served in a warm, community-driven space.
+              St. Petersburg's neighborhood kava bar. Traditional kava, botanical teas, and botanical drinks served in a warm, community-driven space.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -74,13 +75,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display text-lg font-bold mb-4 text-earth-gold">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="font-display text-lg font-bold mb-3 text-earth-gold">Quick Links</h4>
+            <ul className="space-y-0.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <button
                     onClick={() => handleClick(link.href)}
-                    className="font-body text-white/50 text-sm hover:text-earth-gold transition-colors"
+                    className="font-body text-white/50 text-sm hover:text-earth-gold transition-colors text-left"
                   >
                     {link.label}
                   </button>
@@ -103,25 +104,33 @@ export default function Footer() {
                   (727) 253-5583
                 </a>
               </p>
-              <p>
-                <span className="text-white/70 font-medium">Hours:</span><br />
-                Mon–Thu: 8AM – 11PM<br />
-                Fri: 8AM – 12AM<br />
-                Sat: 9AM – 12AM<br />
-                Sun: 9AM – 11PM
-              </p>
             </div>
+            <p className="font-body text-white/50 text-sm mt-4">
+              Website created by{" "}
+              <a
+                href={PORTFOLIO_URL}
+                target={PORTFOLIO_URL.startsWith("http") ? "_blank" : undefined}
+                rel={PORTFOLIO_URL.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="text-earth-gold hover:text-earth-gold-light transition-colors underline underline-offset-2"
+              >
+                Phillip Sylvain
+              </a>
+            </p>
           </div>
-        </div> */}
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-body text-white/30 text-xs">
-            &copy; {new Date().getFullYear()} Black Sheep Botanicals. All rights reserved.
-          </p>
-          <p className="font-body text-white/30 text-xs">
-            5980 66th St N, Unit B, St. Petersburg, FL 33709
-          </p>
+          <div>
+            <h4 className="font-display text-lg font-bold mb-4 text-earth-gold">Hours</h4>
+            <div className="font-body text-sm text-white/50">
+              Mon–Thu: 8AM – 11PM<br />
+              Fri: 8AM – 12AM<br />
+              Sat: 9AM – 12AM<br />
+              Sun: 9AM – 11PM
+            </div>
+            <hr className="mt-4 mb-3 border-0 border-t border-white/10" />
+            <p className="font-body text-white/30 text-xs">
+              &copy; {new Date().getFullYear()} Black Sheep Botanicals. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

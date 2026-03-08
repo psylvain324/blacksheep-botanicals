@@ -1,19 +1,7 @@
-import { useCallback } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Navigation } from "lucide-react";
-import { MapView } from "@/components/Map";
-
-const LOCATION = { lat: 27.8261711, lng: -82.728872 };
 
 export default function MapSection() {
-  const handleMapReady = useCallback((map: google.maps.Map) => {
-    new google.maps.marker.AdvancedMarkerElement({
-      map,
-      position: LOCATION,
-      title: "Black Sheep Botanicals - Kava Bar",
-    });
-  }, []);
-
   return (
     <section id="map" className="bg-earth-cream py-20 sm:py-28">
       <div className="container mx-auto">
@@ -44,13 +32,12 @@ export default function MapSection() {
           transition={{ duration: 0.6 }}
           className="grid lg:grid-cols-3 gap-8"
         >
-          {/* Map */}
+          {/* Photo of Black Sheep location */}
           <div className="lg:col-span-2 rounded-3xl overflow-hidden shadow-xl shadow-earth-brown/10 border border-earth-green/10">
-            <MapView
-              initialCenter={LOCATION}
-              initialZoom={15}
-              onMapReady={handleMapReady}
-              className="w-full h-[350px] sm:h-[450px]"
+            <img
+              src="/Images/IMG_3581.jpeg"
+              alt="Black Sheep Botanicals location at 5980 66th St N, St. Petersburg, FL"
+              className="w-full h-[350px] sm:h-[450px] object-cover"
             />
           </div>
 

@@ -1,12 +1,13 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import WeeklySpecials from "@/components/WeeklySpecials";
 import Events from "@/components/Events";
 import Menu from "@/components/Menu";
+import Contact from "@/components/Contact";
 import Schedule from "@/components/Schedule";
 import AboutSection from "@/components/AboutSection";
 import MapSection from "@/components/MapSection";
-import Contact from "@/components/Contact";
 import SectionDivider from "@/components/SectionDivider";
 
 export default function Home() {
@@ -22,14 +23,16 @@ export default function Home() {
         <SectionDivider color="earth-cream" />
         <Menu />
         <SectionDivider color="earth-green-dark" />
+        <Contact />
+        <SectionDivider color="earth-brown" />
         <Schedule />
         <SectionDivider color="earth-linen" />
         <AboutSection />
         <SectionDivider color="earth-cream" />
         <MapSection />
         <SectionDivider color="earth-brown" />
-        <Contact />
       </main>
+      <Footer />
     </div>
   );
 }
