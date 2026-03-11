@@ -32,12 +32,15 @@ export default function MapSection() {
           transition={{ duration: 0.6 }}
           className="grid lg:grid-cols-3 gap-8"
         >
-          {/* Photo of Black Sheep location */}
+          {/* Google Maps embed */}
           <div className="lg:col-span-2 rounded-3xl overflow-hidden shadow-xl shadow-earth-brown/10 border border-earth-green/10">
-            <img
-              src="/Images/IMG_3581.jpeg"
-              alt="Black Sheep Botanicals location at 5980 66th St N, St. Petersburg, FL"
-              className="w-full h-[350px] sm:h-[450px] object-cover"
+            <iframe
+              title="Black Sheep Botanicals location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3528.1!2d-82.7325!3d27.8175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2e1a3f5b3d7c1%3A0x0!2s5980+66th+St+N%2C+St.+Petersburg%2C+FL+33709!5e0!3m2!1sen!2sus!4v1700000000000"
+              className="w-full h-[350px] sm:h-[450px] border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
 

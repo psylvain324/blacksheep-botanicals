@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Coffee, Droplets, Cookie } from "lucide-react";
+import { Leaf, Coffee, Droplets } from "lucide-react";
 
 const categories = [
   { id: "kava", label: "Kava", icon: Droplets },

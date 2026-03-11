@@ -16,8 +16,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-earth-brown/70 via-earth-brown/50 to-earth-green-dark/70" />
       </div>
 
-      {/* Content - shifted halfway up toward header */}
-      <div className="relative z-10 container mx-auto text-center px-4 pt-20 -mt-[28vh]">
+      {/* Content - centered in viewport */}
+      <div className="relative z-10 container mx-auto text-center px-4 pt-20 -mt-[10vh]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,15 +63,23 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/70 text-base font-semibold"
         >
-          <span className="flex items-center gap-2">
+          <a
+            href="#map"
+            onClick={(e) => { e.preventDefault(); document.querySelector("#map")?.scrollIntoView({ behavior: "smooth" }); }}
+            className="flex items-center gap-2 hover:text-earth-gold transition-colors duration-300 cursor-pointer"
+          >
             <MapPin className="w-4 h-4 text-earth-gold" />
             5980 66th St N, St. Petersburg
-          </span>
+          </a>
           <span className="hidden sm:block w-1 h-1 rounded-full bg-white/30" />
-          <span className="flex items-center gap-2">
+          <a
+            href="#schedule"
+            onClick={(e) => { e.preventDefault(); document.querySelector("#schedule")?.scrollIntoView({ behavior: "smooth" }); }}
+            className="flex items-center gap-2 hover:text-earth-gold transition-colors duration-300 cursor-pointer"
+          >
             <Clock className="w-4 h-4 text-earth-gold" />
             Open Daily — 8AM to 11PM+
-          </span>
+          </a>
         </motion.div>
       </div>
 

@@ -11,6 +11,7 @@ const quickLinks = [
 ];
 
 const PORTFOLIO_URL = "#"; // Update with your portfolio URL when ready
+const SVC_URL = "https://salesvisionconsulting.com"; // Update if different
 
 const socialLinks = [
   {
@@ -44,8 +45,9 @@ export default function Footer() {
   return (
     <footer className="bg-earth-brown text-white">
       <div className="container mx-auto py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-8">
+          {/* Col 1 - Brand */}
+          <div className="lg:row-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-6 h-6 text-earth-gold" />
               <span className="font-display text-xl font-bold">
@@ -74,7 +76,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          {/* Col 2 - Quick Links */}
+          <div className="lg:row-span-2">
             <h4 className="font-display text-lg font-bold mb-3 text-earth-gold">Quick Links</h4>
             <ul className="space-y-0.5">
               {quickLinks.map((link) => (
@@ -90,6 +93,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Col 3 - Contact (row 1) */}
           <div>
             <h4 className="font-display text-lg font-bold mb-4 text-earth-gold">Contact</h4>
             <div className="space-y-3 font-body text-sm text-white/50">
@@ -105,7 +109,27 @@ export default function Footer() {
                 </a>
               </p>
             </div>
-            <p className="font-body text-white/50 text-sm mt-4">
+          </div>
+
+          {/* Col 4 - Hours (row 1) */}
+          <div>
+            <h4 className="font-display text-lg font-bold mb-4 text-earth-gold">Hours</h4>
+            <div className="font-body text-sm text-white/50">
+              Mon–Thu: 8AM – 11PM<br />
+              Fri: 8AM – 12AM<br />
+              Sat: 9AM – 12AM<br />
+              Sun: 9AM – 11PM
+            </div>
+          </div>
+
+          {/* Website credit - spans Contact & Hours columns (cols 3-4, row 2) */}
+          <div className="lg:col-start-3 lg:col-span-2 flex items-center gap-3 font-body text-white/50 text-sm">
+            <img
+              src="/Images/PhilPortrait_1.jpg"
+              alt="Phillip Sylvain"
+              className="w-10 h-10 rounded-full object-cover border border-earth-gold/40 shrink-0"
+            />
+            <span>
               Website created by{" "}
               <a
                 href={PORTFOLIO_URL}
@@ -115,23 +139,24 @@ export default function Footer() {
               >
                 Phillip Sylvain
               </a>
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-display text-lg font-bold mb-4 text-earth-gold">Hours</h4>
-            <div className="font-body text-sm text-white/50">
-              Mon–Thu: 8AM – 11PM<br />
-              Fri: 8AM – 12AM<br />
-              Sat: 9AM – 12AM<br />
-              Sun: 9AM – 11PM
-            </div>
-            <hr className="mt-4 mb-3 border-0 border-t border-white/10" />
-            <p className="font-body text-white/30 text-xs">
-              &copy; {new Date().getFullYear()} Black Sheep Botanicals. All rights reserved.
-            </p>
+              {" "}@{" "}
+              <a
+                href={SVC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-earth-gold hover:text-earth-gold-light transition-colors underline underline-offset-2"
+              >
+                Sales Vision Consulting
+              </a>
+            </span>
           </div>
         </div>
+
+        {/* Copyright */}
+        <hr className="mt-6 mb-3 border-0 border-t border-white/10" />
+        <p className="font-body text-white/30 text-xs">
+          &copy; {new Date().getFullYear()} Black Sheep Botanicals. All rights reserved.
+        </p>
       </div>
     </footer>
   );

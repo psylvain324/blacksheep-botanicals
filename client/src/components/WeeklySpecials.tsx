@@ -19,8 +19,8 @@ export default function WeeklySpecials() {
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-earth-brown mb-2">
             Best Specials In Town!
           </h2>
-          <p className="font-body text-earth-brown-light text-base max-w-xl mx-auto">
-            $5 Double Tea · $15 Half Gallon (Mon/Wed/Fri)
+          <p className="font-body text-earth-green font-semibold text-base max-w-xl mx-auto">
+            $5 Double Tea · $15 Half Gallon · $25 Gallon (Mon/Wed/Fri)
           </p>
         </motion.div>
 
