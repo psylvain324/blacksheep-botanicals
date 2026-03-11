@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Coffee, Droplets } from "lucide-react";
+import { Leaf, Coffee, Droplets, Pizza, DessertIcon } from "lucide-react";
 
 const categories = [
   { id: "kava", label: "Kava", icon: Droplets },
   { id: "botanical", label: "Botanical Teas", icon: Leaf },
-  { id: "drinks", label: "Other Drinks", icon: Coffee },
+  { id: "other", label: "Other Drinks/Snacks", icon: Coffee },
+  { id: "vapes", label: "Vapes", icon: DessertIcon },
 ];
 
 interface MenuItem {
@@ -29,9 +30,16 @@ const menuItems: Record<string, MenuItem[]> = {
     { name: "Botanical Tea Double (Special Days)", description: "Available Mon, Wed, Fri at the special price. Same great quality.", price: "$5", tag: "M/W/F Special" },
     { name: "Botanical Shots", description: "Concentrated Botanical extract for a quick, convenient boost.", price: "Ask" },
   ],
-  drinks: [
-    { name: "White Rabbit Seltzer", description: "Flavors: ", price: "$7" },
-    { name: "Kava Seltzer", description: "Falvors: ", price: "$4" },
+  other: [
+    { name: "White Rabbit Seltzer", description: "Falvors: Root Beer, Cherry", price: "$7" },
+    { name: "White Rabbit Seltzer", description: "Cream Soda, Berry", price: "$7" },
+    { name: "Kava Seltzer", description: "Flavors: Berry, Lemon, Peach", price: "$7" },
+    { name: "Assorted Chips", description: "Lays, Doritos, Cheetos, etc.", price: "$3" },
+  ],
+  vapes: [
+    { name: "Lost Mary", description: "Flavors: Berry, Menthol, Vanilla", price: "$15" },
+    { name: "Geek Bar", description: "Flavors: Blueberry, Strawberry, Mango", price: "$15" },
+    { name: "Raz", description: "Flavors: Mango, Strawberry, Pineapple", price: "$15" },
   ],
 };
 
